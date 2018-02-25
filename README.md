@@ -5,6 +5,8 @@ Udacity's Self-Driving Car Engineer Nanodegree Program - Term 1 Projects and Exe
 
 CarND-LaneLines-P1 - Finding Lane Lines on the Road
 
+CarND-Traffic-Sign-Classifier-Project - Classifying German Traffic signs using CNN
+
 ## Exercises
 
 CarND-LeNet-Lab - Implementation of LeNet architecture using TensorFlow
