@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./writeup/Dataset_Visualisation.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./writeup/Web_Image_Responses.jpg "Feature Maps"
+[image3]: ./writeup/Web_Image_Responses.png "Feature Maps"
 [image4]: ./web-images/70.png "Traffic Sign 1"
 [image5]: ./web-images/unlimited-speed.png "Traffic Sign 2"
 [image6]: ./web-images/general-caution.png "Traffic Sign 3"
