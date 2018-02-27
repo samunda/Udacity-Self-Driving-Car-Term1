@@ -24,16 +24,10 @@ The goals / steps of this project are the following:
 [image7]: ./web-images/ahead-only.png "Traffic Sign 4"
 [image8]: ./web-images/priority-road.png "Traffic Sign 5"
 
-
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
 ---
 ###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/samunda/Udacity-Self-Driving-Car-Term1/blob/master/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb)
+This project is essentially about identifying German traffic signs. Here is a link to my [project code](https://github.com/samunda/Udacity-Self-Driving-Car-Term1/blob/master/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb)
 
 ###Data Set Summary & Exploration
 
@@ -52,8 +46,6 @@ Here is an exploratory visualization of the data set. It shows an example traini
 ![alt text][image1]
 
 ###Design and Test a Model Architecture
-
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 I analyzed the range of the image data values and found it to be in the domain [0.00 255.00]. I used the formula (X - 128.0) / 128.0 to normalize image data so that the domain is [-1.00 1.00] and mean is 0. This is because it improves numerical conditioning and the training.
 
@@ -88,9 +80,9 @@ To train the model, I used the Adam optimizer with a learning rate of 0.001. The
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.982
-* validation set accuracy of 0.932
-* test set accuracy of 0.924
+* training set accuracy of 0.984
+* validation set accuracy of 0.939
+* test set accuracy of 0.916
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -122,17 +114,17 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 70 km/h      		    | 4, Speed limit (70km/h)  									| 
+| 70 km/h      		    | 0, Speed limit (20km/h) 									| 
 | unlimited-speed     	| 32, unlimited-speed (End of all speed and passing limits) 								|
 | general-caution		| 18, General caution								|
 | ahead-only      		| 35, Ahead only					 				|
 | priority-road			| 12, Priority road     							|
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 92.4%.
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 91.6%.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 15th cell of the Ipython notebook.
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
