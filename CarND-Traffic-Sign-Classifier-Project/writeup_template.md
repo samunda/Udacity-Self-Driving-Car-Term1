@@ -23,6 +23,11 @@ The goals / steps of this project are the following:
 [image6]: ./web-images/general-caution.png "Traffic Sign 3"
 [image7]: ./web-images/ahead-only.png "Traffic Sign 4"
 [image8]: ./web-images/priority-road.png "Traffic Sign 5"
+[image11]: ./writeup/Chart1.png "Softmax Probabilities for Test Image1"
+[image12]: ./writeup/Chart1.png "Softmax Probabilities for Test Image2"
+[image13]: ./writeup/Chart1.png "Softmax Probabilities for Test Image3"
+[image14]: ./writeup/Chart1.png "Softmax Probabilities for Test Image4"
+[image15]: ./writeup/Chart1.png "Softmax Probabilities for Test Image5"
 
 ---
 ###Writeup / README
@@ -80,9 +85,9 @@ To train the model, I used the Adam optimizer with a learning rate of 0.001. The
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.984
-* validation set accuracy of 0.939
-* test set accuracy of 0.916
+* training set accuracy of 0.983
+* validation set accuracy of 0.946
+* test set accuracy of 0.922
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -95,7 +100,8 @@ If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+
+We chose the well known LeNet architecture. It performed well with a high training accuracy and a reasonably high (meeting the expected level) validation accuracy without overfitting.
 
 ###Test a Model on New Images
 
@@ -106,8 +112,6 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
-
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
@@ -115,32 +119,43 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 70 km/h      		    | 0, Speed limit (20km/h) 									| 
-| unlimited-speed     	| 32, unlimited-speed (End of all speed and passing limits) 								|
+| unlimited-speed     	| 6, End of speed limit (80km/h)							|
 | general-caution		| 18, General caution								|
 | ahead-only      		| 35, Ahead only					 				|
 | priority-road			| 12, Priority road     							|
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 91.6%.
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 92.2%.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 15th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively sure that this is a speed limit of 70 km/h (probability of 0.846), and the image does contain a 70 km/h speed limit sign. The top five soft max probabilities are shown in below bar chart. It shows the next likely (with a probability < 0.06) candidates are other speed signs.
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+![alt text][image11]
+
+For the second image, the model predicts a end of 80 km/h speed limit sign (probability of 0.677). However, this is an incorrect classification as the sign actually contains an end of all speeds and passing limits sign. The model still predicts a reasonably high probability of 0.316 for the correct sign.
+
+![alt text][image12]
+
+For the third image, the model correctly predicts a general caution sign. Rest of the softmax probabilities show that other signs are relatively unlikely.
+
+![alt text][image13]
+
+For the fourth image, the model correctly predicts an ahead only sign. Rest of the softmax probabilities show that other signs are relatively unlikely.
+
+![alt text][image14]
+
+For the fifth image, the model correctly predicts a priority road sign. Rest of the softmax probabilities show that other signs are relatively unlikely.
+
+![alt text][image15]
 
 
-For the second image ... 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
+The figure below displays the output of the first layer (cnn1) of the model for the five test images. It shows that the first CNN layer has learnt to extract low level image features such as edges.
 
 ![alt text][image3]
 
