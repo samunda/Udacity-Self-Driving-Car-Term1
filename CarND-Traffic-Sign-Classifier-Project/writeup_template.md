@@ -24,15 +24,15 @@ The goals / steps of this project are the following:
 [image7]: ./web-images/ahead-only.png "Traffic Sign 4"
 [image8]: ./web-images/priority-road.png "Traffic Sign 5"
 [image11]: ./writeup/Chart1.png "Softmax Probabilities for Test Image1"
-[image12]: ./writeup/Chart1.png "Softmax Probabilities for Test Image2"
-[image13]: ./writeup/Chart1.png "Softmax Probabilities for Test Image3"
-[image14]: ./writeup/Chart1.png "Softmax Probabilities for Test Image4"
-[image15]: ./writeup/Chart1.png "Softmax Probabilities for Test Image5"
+[image12]: ./writeup/Chart2.png "Softmax Probabilities for Test Image2"
+[image13]: ./writeup/Chart3.png "Softmax Probabilities for Test Image3"
+[image14]: ./writeup/Chart4.png "Softmax Probabilities for Test Image4"
+[image15]: ./writeup/Chart5.png "Softmax Probabilities for Test Image5"
 
 ---
 ###Writeup / README
 
-This project is essentially about identifying German traffic signs. Here is a link to my [project code](https://github.com/samunda/Udacity-Self-Driving-Car-Term1/blob/master/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb)
+This project is essentially about identifying German traffic signs. Here is a link to my [project code](https://github.com/samunda/Udacity-Self-Driving-Car-Term1/blob/master/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb).
 
 ###Data Set Summary & Exploration
 
@@ -153,7 +153,6 @@ For the fifth image, the model correctly predicts a priority road sign. Rest of 
 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 The figure below displays the output of the first layer (cnn1) of the model for the five test images. It shows that the first CNN layer has learnt to extract low level image features such as edges.
 
