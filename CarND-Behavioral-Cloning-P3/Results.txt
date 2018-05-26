@@ -1,0 +1,1 @@
+Selected model: train5\model_batch_size=64_epochs=4_correction=0.2_drop=0.5.h5
